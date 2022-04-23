@@ -28,6 +28,8 @@ module AwsProject
     middleware.delete ActiveRecord::ConnectionHandling
     middleware.delete ActiveRecord::Migration::CheckPending
     middleware.delete ActiveRecord::QueryCache
+
+    config.autoload_paths += Dir[Rails.root.join('app', 'services')]
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
