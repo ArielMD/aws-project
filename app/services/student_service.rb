@@ -45,13 +45,13 @@ class StudentService
   end
 
   def delete(id)
-    student_founded = find(id)
+    student_found = find(id)
     
-    if student_founded.nil?
+    if student_found.nil?
       raise ActiveRecord::RecordNotFound
     end
     
-    students.delete_if {|student| student.id == student_founded.id }
+    students.delete_if {|student| student.id == student_found.id }
   end
 
   private

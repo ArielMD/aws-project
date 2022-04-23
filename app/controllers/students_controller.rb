@@ -29,9 +29,9 @@ class StudentsController < ApplicationController
     errors, student = student_service.update(params[:id], edit_params)
     if(errors)
       return render json: errors, status: :unprocessable_entity
-    else
-      render json: student, status: :ok
     end
+    
+    render json: student, status: :ok
   end
 
   def destroy
